@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Cube Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="page">
+        <div class="gameTitle">
+            <div class="title-digital">JUMPING CUBE</div>
+            <div class="title-readout" aria-hidden="false">
+                <div class="readout-item">MULT <span id="readoutMultiplier" class="led-digit">1.00</span></div>
+                <div class="readout-item">DIFF <span id="readoutDifficulty">NORMAL</span></div>
+                <div class="readout-item">SCORE <span id="readoutScore" class="led-digit">0</span></div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar" style="width:0%"></div>
+            </div>
+        </div>
+
+        <div class="game-and-panel">
+        <div class="scene">
+            <div id="game">
+                <div id="score">Score: 0</div>
+                <button id="muteBtn" aria-label="mute" title="Mute" style="position:absolute; right:10px; top:10px; z-index:30;">🔊</button>
+                <div id="character"></div>
+                <div id="startOverlay" class="overlay">
+                    <div class="overlayBox">
+                        <h2>Jumping Cube</h2>
+                        <p>Press Space or Up to jump. Press Start to begin.</p>
+                        <button id="startBtn">Start</button>
+                    </div>
+                </div>
+                <div id="gameOverOverlay" class="overlay" style="display:none;">
+                    <div class="overlayBox">
+                        <h2>Game Over</h2>
+                        <p>Your score: <span id="finalScore">0</span></p>
+                        <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                            <button id="retryBtn" class="primary">Retry</button>
+                            <button id="menuBtn">Leaderboard</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="leaderboardOverlay" class="overlay" style="display:none;">
+                    <div class="overlayBox">
+                        <h2>Leaderboard</h2>
+                        <ol id="leaderboardList" style="text-align:left; margin:8px 0 0; padding-left:18px;"></ol>
+                        <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                            <button id="closeLeaderboard" class="primary">Close</button>
+                            <button id="shareBtn">Share Top Score</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ground-shadow"></div>
+        </div>
+
+        <aside class="panel">
+            <h1>Jumping Cube</h1>
+            <p class="tag">A tiny, addictive Flappy-like jumper — desktop only</p>
+            <div class="panel-actions">
+                <button id="panelStartBtn" class="primary">Play</button>
+                <button id="panelMuteBtn" class="muter">Mute</button>
+            </div>
+            <div class="panel-section">
+                <h3>Difficulty</h3>
+                <select id="difficultySelect">
+                    <option value="easy">Easy</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="panel-section">
+                <h3>Player Color</h3>
+                <div class="color-row">
+                    <input id="colorPicker" type="color" value="#00f5ff" title="Pick player color">
+                    <button class="swatch" data-color="#00f5ff" style="background:#00f5ff"></button>
+                    <button class="swatch" data-color="#ff3bff" style="background:#ff3bff"></button>
+                    <button class="swatch" data-color="#7cff6b" style="background:#7cff6b"></button>
+                    <button class="swatch" data-color="#ffd54f" style="background:#ffd54f"></button>
+                </div>
+            </div>
+            <div class="panel-info">
+                <h3>How to play</h3>
+                <ul>
+                    <li>Press <strong>Space</strong> or <strong>Up</strong> to jump.</li>
+                    <li>Click inside the game area to flap.</li>
+                    <li>Avoid the moving bars and survive as long as possible.</li>
+                </ul>
+            </div>
+            <div class="panel-footer">High score: <span id="highScore">0</span></div>
+        </aside>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

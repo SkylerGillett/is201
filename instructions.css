@@ -1,0 +1,17 @@
+/* App-store style instructions page */
+:root{ --accent:#0b76ff; --bg:#f6f8fb; --card:#ffffff; --muted:#6b7280 }
+body{ margin:0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#0b1220; display:flex; align-items:center; justify-content:center; min-height:100vh; }
+.app-card{ width:92%; max-width:920px; background:var(--card); border-radius:18px; box-shadow:0 30px 80px rgba(6,20,40,0.12); padding:22px; }
+.app-header{ display:flex; gap:18px; align-items:center; }
+.icon{ width:84px; height:84px; border-radius:20px; background:linear-gradient(180deg,var(--accent),#0a58d3); display:flex; align-items:center; justify-content:center; font-size:40px; color:#fff; box-shadow: 0 12px 36px rgba(11,118,255,0.18); }
+.meta h1{ margin:0; font-size:1.6rem; }
+.meta .subtitle{ margin:6px 0 12px; color:var(--muted); }
+.btn{ display:inline-block; padding:10px 14px; border-radius:12px; background:linear-gradient(180deg,var(--accent),#0a58d3); color:#fff; text-decoration:none; font-weight:700; box-shadow:0 10px 30px rgba(11,118,255,0.16); }
+.play{ margin-left:6px }
+.screenshots{ display:flex; gap:12px; margin:18px 0; }
+.shot{ flex:1; height:180px; border-radius:12px; background:linear-gradient(180deg,#0b76ff20,#0a58d320); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:700 }
+.description{ padding:12px 0; color:#111 }
+.description h2{ margin:12px 0 8px; }
+.description ol li, .description ul li{ margin-bottom:8px }
+.app-footer{ margin-top:18px; display:flex; justify-content:space-between; align-items:center; color:var(--muted) }
+@media (max-width:660px){ .app-header{ flex-direction:column; align-items:flex-start } .screenshots{ flex-direction:column } }
